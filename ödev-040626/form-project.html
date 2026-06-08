@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Yapısı</title>
+</head>
+<body>
+
+    <h2>Kişi Formu</h2>
+
+    <form id="kisiForm">
+        <label>Fotoğraf:</label>
+        <input type="file" id="foto" accept="image/*">
+        <br><br>
+
+        <label>Ad:</label>
+        <input type="text" id="ad">
+        <br><br>
+
+        <label>Soyad:</label>
+        <input type="text" id="soyad">
+        <br><br>
+
+        <label>Telefon:</label>
+        <input type="tel" id="telefon">
+        <br><br>
+
+        <button type="submit">Ekle</button>
+    </form>
+
+    <hr>
+
+    <h2>Liste</h2>
+    <div id="liste"></div>
+
+    <script>
+        const form = document.getElementById("kisiForm");
+        const liste = document.getElementById("liste");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const foto = document.getElementById("foto").files[0];
+            const ad = document.getElementById("ad").value;
+            const soyad = document.getElementById("soyad").value;
+            const telefon = document.getElementById("telefon").value;
+
+            const kisiDiv = document.createElement("div");
+
+            if (foto) {
+                const img = document.createElement("img");
+                img.src = URL.createObjectURL(foto);
+                img.width = 100;
+                kisiDiv.appendChild(img);
+            }
+
+            const bilgi = document.createElement("p");
+            bilgi.textContent = "Ad: " + ad + " | Soyad: " + soyad + " | Telefon: " + telefon;
+
+            kisiDiv.appendChild(bilgi);
+            liste.appendChild(kisiDiv);
+
+            form.reset();
+        });
+    </script>
+
+</body>
+</html>
