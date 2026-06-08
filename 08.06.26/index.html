@@ -4,29 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.class">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen p-8 flex flex-col items-center justify-center gap-6">
+    <div class="text-center max-w-md ">
+        <h1 class="text-xl font-bold text-gray-900 mb-2 ">Sosyal Paylaşım Barları</h1>
+        <p class="text-xs text-gray-500">
+            Butonları Yatay Düzenleme Flex ve Flex-row ile 
+        </p>
+    </div>
 
-    <div>
-        <h2>Giriş</h2>
-        <button>Buton 1</button>
-        <button>Buton 2</button>
-        <button>Buton 3</button>
+    <div class="w-full max-h-md border border-gray-200 rounded-xl p-4 flex flex-col justify-between items-center gap-3 shadow-sm">
+        <h2>1.Yöntem Grid Yöntemi</h2>
+        <button class="flex-1 py-3 px-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg text-sm font-semibold text-gray-700 transition-colors">Beğen</button>
+        <button class="flex-2">Kart 2</button>
+        <button class="flex-3">Kart 3</button>
+        <button>Kart 4</button>
     </div>
 
     <div>
-        <h2>Gelişme</h2>
-        <button>Buton 4</button>
-        <button>Buton 5</button>
-        <button>Buton 6</button>
+        <h2>2.Yöntem</h2>
+        <button>Kart 4</button>
+        <button>Kart 5</button>
+        <button>Kart 6</button>
     </div>
 
     <div>
-        <h2>Sonuç</h2>
-        <button>Buton 7</button>
-        <button>Buton 8</button>
-        <button>Buton 9</button>
+        <h2>3.Yöntem</h2>
+        <button>Kart 7</button>
+        <button>Kart 8</button>
+        <button>Kart 9</button>
     </div>
     
 </body>
