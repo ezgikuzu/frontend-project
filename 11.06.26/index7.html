@@ -29,18 +29,18 @@
     </script>
     <script type="text/typescript">
         const out = document.getElementById('result') as HTMLDivElement;
-        function ilkElemaniAl<T>(di<i:T[]):T{
+        function ilkElemaniAl<T>(dizi:T[]):T{
             return dizi[0];
         }
         const sayilar:number[]=[100,200,300];
         const ogrenciler:string[]=["ali", "veli","onur"];
         document.getElementById('btn-numbers').addEventListener('click', ()=>{
             const sonuc= ilkElemaniAl<number>(sayilar);
-            out.innerText="sayi dizisinin ilk elemanı" + sonuc + "(tip: typeof sonuc + ")";
+            out.innerText="sayi dizisinin ilk elemanı" + sonuc + "(tip: "+ typeof sonuc + ")";
         })
         document.getElementById('btn-strings').addEventListener('click', ()=>{
             const sonuc= ilkElemaniAl<string>(ogrenciler);
-            out.innerText="metin dizisinin ilk elemanı" + sonuc + "(tip: typeof sonuc + ")";
+            out.innerText="metin dizisinin ilk elemanı" + sonuc + "(tip: "+ typeof sonuc + ")";
         })
     </script>
     
