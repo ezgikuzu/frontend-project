@@ -69,7 +69,8 @@
         status.className='p-2 border';
 
         let urunler=[];
-
+            
+        
         try{
             const response = await axios.get('https://kodusta.com/api/urunler.json');
             urunler=response.data;
@@ -117,13 +118,15 @@
 
     const sepetiGuncelle = (callback)=>{
         const cartList = document.getElementById('cart-list');
+        const cartTotal = document.getElementById('cart-total');
         cartList.innerHTML='';
         sepet.forEach(item=>{
-            const li = document.getElementById.createElement('li');
-            li.innerHTML=`${item.title}- ${item.fiyat}TL`;
+            const li = document.createElement('li');
+            li.innerHTML=`${item.title}- ${item.fiyat}`;
             cartList.appendChild(li);
         })
-        const toplam = sepet.reduce((toplam,item)=> toplam + item.fiyat, 0);
+        const toplam = sepet.reduce((toplam,item)=> toplam + Number(item.fiyat), 0);
+        cartTotal.innerText = toplam;
         callback(toplam);
     }
 
@@ -149,7 +152,7 @@
     }
 }
 
-    const siparisiTamala = async()=> {
+    const siparisiTamamla = async()=> {
         const status = document.getElementById('status');
         if(sepet.length===0){
             status.className="p-2 bg-red-200";
@@ -190,7 +193,7 @@
         }
     }
     document.getElementById('btn-search').addEventListener('click', urunleriSorgula);
-    document.getElementById('btn-checkout').addEventListener('click', siparisiTamala);
+    document.getElementById('btn-checkout').addEventListener('click', siparisiTamamla);
 
 
 </script>
